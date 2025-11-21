@@ -74,7 +74,7 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({
   const totalCount = category.tasks.length;
 
   return (
-    <div className="glass-strong rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+    <div className="rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300" style={{ backgroundColor: '#e8f0ff', backdropFilter: 'blur(10px)' }}>
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-3">
           <div
@@ -92,7 +92,7 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({
         </button>
       </div>
 
-      <div className="mb-4 glass-light rounded-lg p-3">
+      <div className="mb-4 rounded-lg p-3" style={{ backgroundColor: 'rgba(255, 255, 255, 0.4)' }}>
         <div className="flex justify-between text-sm text-gray-600">
           <span>Progress</span>
           <span className="font-medium">
@@ -114,9 +114,10 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({
         {category.tasks.map((task, index) => (
           <div
             key={task.id}
-            className={`glass-light rounded-xl p-3 transition-all duration-200 ${
+            className={`rounded-xl p-3 transition-all duration-200 ${
               task.completed ? 'opacity-60' : ''
             }`}
+            style={{ backgroundColor: 'rgba(255, 255, 255, 0.4)' }}
           >
             <div className="flex items-center gap-3">
               <button
@@ -169,7 +170,7 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({
       </div>
 
       {isAddingTask ? (
-        <div className="glass-light rounded-xl p-3">
+        <div className="rounded-xl p-3" style={{ backgroundColor: 'rgba(255, 255, 255, 0.4)' }}>
           <input
             type="text"
             value={newTaskText}
@@ -201,7 +202,8 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({
       ) : (
         <button
           onClick={() => setIsAddingTask(true)}
-          className="w-full py-3 glass-light hover:glass rounded-xl transition-all duration-200 flex items-center justify-center gap-2 text-gray-700 font-medium"
+          className="w-full py-3 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 text-gray-700 font-medium"
+          style={{ backgroundColor: 'rgba(255, 255, 255, 0.4)' }}
         >
           <Plus className="w-5 h-5" />
           Add Task
