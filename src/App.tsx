@@ -77,6 +77,11 @@ function App() {
     setShowSuccessPopup(true);
   };
 
+  const handleSuccessPopupClose = () => {
+    setShowSuccessPopup(false);
+    setShowAuthModal(true);
+  };
+
   const totalTasks = categories.reduce((sum, cat) => sum + cat.tasks.length, 0);
   const completedTasks = categories.reduce(
     (sum, cat) => sum + cat.tasks.filter(t => t.completed).length,
@@ -126,7 +131,7 @@ function App() {
         )}
 
         {showSuccessPopup && (
-          <SuccessPopup onClose={() => setShowSuccessPopup(false)} />
+          <SuccessPopup onClose={handleSuccessPopupClose} />
         )}
       </div>
     );
